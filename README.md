@@ -1,2 +1,3 @@
 # myTinyWMS-DockerBase
-base docker image
+
+base docker image for mytinywms to speed up docker build
