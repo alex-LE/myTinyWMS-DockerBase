@@ -7,7 +7,7 @@ RUN set -e -x \
         nginx \
         wget nano unzip \
         zlib1g-dev zlib1g libmcrypt-dev libicu-dev \
-        supervisor \
+        supervisor mariadb-client \
         libpcre3-dev \
         libc-client-dev libkrb5-dev \
         libpq-dev libzip-dev \
