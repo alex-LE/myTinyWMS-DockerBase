@@ -1,4 +1,4 @@
-FROM library/php:7.2-fpm
+FROM library/php:7.3-fpm
 
 RUN set -e -x \
     && apt-get update \
@@ -10,7 +10,7 @@ RUN set -e -x \
         supervisor \
         libpcre3-dev \
         libc-client-dev libkrb5-dev \
-        libpq-dev \
+        libpq-dev libzip-dev \
         libldap2-dev libxrender1 libxext6 \
         locales git gnupg \
         libfreetype6-dev libmcrypt-dev libjpeg-dev libpng-dev \
@@ -33,9 +33,9 @@ RUN set -e -x \
 
 # Install wkhtmltopdf
 RUN set -e -x \
-	&& wget "https://downloads.wkhtmltopdf.org/0.12/0.12.5/wkhtmltox_0.12.5-1.stretch_amd64.deb" -q -O /tmp/wkhtmltox_0.12.5-1.stretch_amd64.deb \
-	&& apt install -y /tmp/wkhtmltox_0.12.5-1.stretch_amd64.deb \
-	&& rm -rf /tmp/wkhtmltox_0.12.5-1.stretch_amd64.deb
+	&& wget "https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.stretch_amd64.deb" -q -O /tmp/wkhtmltox_0.12.6-1.stretch_amd64.deb \
+	&& apt install -y /tmp/wkhtmltox_0.12.6-1.stretch_amd64.deb \
+	&& rm -rf /tmp/wkhtmltox_0.12.6-1.stretch_amd64.deb
 
 # Install nodejs and npm
 RUN set -e -x \
