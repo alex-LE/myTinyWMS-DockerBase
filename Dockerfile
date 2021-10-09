@@ -2,6 +2,7 @@ FROM library/php:7.3-fpm
 
 RUN set -e -x \
     && apt-get update \
+    && apt-get -y upgrade ca-certificates \
     && apt-get install -y \
         apt-transport-https \
         nginx \
