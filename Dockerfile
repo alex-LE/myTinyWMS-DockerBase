@@ -40,9 +40,8 @@ RUN set -e -x \
 
 # Install nodejs and npm
 RUN set -e -x \
-    && wget --quiet -O - https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - \
-	&& printf "deb https://deb.nodesource.com/node_11.x stretch main\ndeb-src https://deb.nodesource.com/node_11.x stretch main\n" > /etc/apt/sources.list.d/nodesource.list \
-	&& apt-get update \
+    && curl -sL https://deb.nodesource.com/setup_15.x | bash - \
+	&& apt-get update && apt install -y nodejs \
 	&& apt-get install -y --allow-unauthenticated nodejs \
 	&& npm update -g npm
 
