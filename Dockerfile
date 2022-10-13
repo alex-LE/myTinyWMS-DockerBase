@@ -40,7 +40,7 @@ RUN set -e -x \
 
 # Install nodejs and npm
 RUN set -e -x \
-    && curl -sL https://deb.nodesource.com/setup_15.x | bash - \
+    && curl -sL https://deb.nodesource.com/setup_14.x | bash - \
 	&& apt-get update && apt install -y nodejs \
 	&& apt-get install -y --allow-unauthenticated nodejs \
 	&& npm update -g npm
